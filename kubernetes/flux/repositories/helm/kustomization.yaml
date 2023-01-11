@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - ./ingress-nginx.yaml
   - ./jetstack.yaml
+  - ./bjw-s.yaml
