@@ -13,7 +13,7 @@ spec:
       version: 0.16.1
       sourceRef:
         kind: HelmRepository
-        name: cloudnative-pg
+        name: cnpg
         namespace: flux-system
   maxHistory: 3
   install:
