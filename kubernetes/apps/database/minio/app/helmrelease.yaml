@@ -75,6 +75,9 @@ spec:
     persistence:
       storage:
         enabled: true
+        type: pvc
+        accessMode: ReadWriteOnce
+        size: 5Gi
     resources:
       requests:
         memory: 100Mi
