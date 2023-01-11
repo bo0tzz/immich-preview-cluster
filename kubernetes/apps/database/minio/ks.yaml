@@ -6,7 +6,7 @@ metadata:
   name: database-minio
   namespace: database
 spec:
-  path: ./kubernetes/apps/default/minio/app
+  path: ./kubernetes/apps/database/minio/app
   prune: true
   sourceRef:
     kind: GitRepository
