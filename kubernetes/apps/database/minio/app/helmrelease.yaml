@@ -35,9 +35,11 @@ spec:
       main:
         enabled: true
         ports:
+          http:
+            port: 9001
           api:
             enabled: true
-            port: &api-port 9000
+            port: 9000
     probes:
       liveness: &probes
         enabled: true
@@ -45,7 +47,7 @@ spec:
         spec:
           httpGet:
             path: /minio/health/live
-            port: *api-port
+            port: 9000
           initialDelaySeconds: 0
           periodSeconds: 10
           timeoutSeconds: 1
