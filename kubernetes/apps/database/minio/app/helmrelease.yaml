@@ -31,6 +31,9 @@ spec:
       repository: minio/minio
       tag: RELEASE.2022-05-19T18-20-59Z
     args: ["gateway", "nas", "/storage"]
+    envFrom:
+      - secretRef:
+          name: minio-secret
     service:
       main:
         enabled: true
