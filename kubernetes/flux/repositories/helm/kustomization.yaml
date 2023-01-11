@@ -5,3 +5,4 @@ resources:
   - ./ingress-nginx.yaml
   - ./jetstack.yaml
   - ./bjw-s.yaml
+  - ./cnpg.yaml
