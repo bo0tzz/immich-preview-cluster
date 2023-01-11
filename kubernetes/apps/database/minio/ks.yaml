@@ -4,7 +4,7 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
   name: database-minio
-  namespace: database
+  namespace: flux-system
 spec:
   path: ./kubernetes/apps/database/minio/app
   prune: true
