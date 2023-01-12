@@ -27,6 +27,8 @@ spec:
       namespace: cert-manager
   values:
     controller:
+      publishService:
+        enabled: false
       hostPort:
         enabled: true
       ingressClassResource:
