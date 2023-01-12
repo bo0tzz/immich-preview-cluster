@@ -3,7 +3,7 @@ kind: Cluster
 metadata:
   name: {{include "immich-preview.fullnamePrefix" .}}-database
 spec:
-  instances: 1
+  instances: {{include "immich-preview.replicas" .}}
   imageName: ghcr.io/cloudnative-pg/postgresql:14.5
   primaryUpdateStrategy: unsupervised
   storage:

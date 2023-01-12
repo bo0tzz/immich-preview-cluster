@@ -7,7 +7,7 @@ spec:
     matchLabels:
       preview.immich.app/instance: {{include "immich-preview.fullnamePrefix" .}}
       preview.immich.app/component: redis
-  replicas: 1
+  replicas: {{include "immich-preview.replicas" .}}
   template:
     metadata:
       labels:

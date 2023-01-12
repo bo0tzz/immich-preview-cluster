@@ -17,3 +17,7 @@
 {{- printf "%s.preview.immich.cloud" .Release.Name }}
 {{- end}}
 {{- end}}
+
+{{- define "immich-preview.replicas" -}}
+{{- if .Values.suspend }}0{{- else }}1{{- end }}
+{{- end }}

@@ -2,9 +2,7 @@
 
 # url: pr-1027.preview.immich.cloud
 
-# loginPageMessage: |-
-#   This is an Immich preview instance.
-#   This message should support newlines.
+loginPageMessage: This is an Immich preview instance
 
 # fullnamePrefixOverride: immich-demo
 

@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: {{include "immich-preview.fullnamePrefix" .}}-proxy
 spec:
+  replicas: {{include "immich-preview.replicas" .}}
   selector:
     matchLabels:
       preview.immich.app/instance: {{include "immich-preview.fullnamePrefix" .}}
