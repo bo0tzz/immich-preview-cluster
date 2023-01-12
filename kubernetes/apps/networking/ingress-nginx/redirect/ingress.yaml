@@ -11,7 +11,9 @@ spec:
   ingressClassName: nginx
   rules:
   - host: immich.cloud
+  - host: www.immich.cloud
   tls:
   - hosts:
     - immich.cloud
+    - www.immich.cloud
     secretName: cloud-to-app-redirect-tls
