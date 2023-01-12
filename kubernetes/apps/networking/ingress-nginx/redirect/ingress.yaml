@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cloud-to-app-redirect
+  namespace: networking
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    nginx.ingress.kubernetes.io/server-snippet: |
+      return 301 $scheme://immich.app;
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: immich.cloud
+  tls:
+  - hosts:
+    - immich.cloud
+    secretName: cloud-to-app-redirect-tls
