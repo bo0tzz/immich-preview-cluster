@@ -27,6 +27,8 @@ spec:
       namespace: cert-manager
   values:
     controller:
+      service:
+        type: ClusterIP
       publishService:
         enabled: false
       hostPort:
