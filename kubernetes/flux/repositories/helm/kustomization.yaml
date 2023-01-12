@@ -6,3 +6,6 @@ resources:
   - ./jetstack.yaml
   - ./bjw-s.yaml
   - ./cnpg.yaml
+  - ./democratic-csi.yaml
+  - ./piraeus.yaml
+  
