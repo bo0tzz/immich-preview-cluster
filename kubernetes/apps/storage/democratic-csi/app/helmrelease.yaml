@@ -27,9 +27,14 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    controller:
+      externalResizer:
+        enabled: false
+
     csiDriver:
-      name: "org.democratic-csi.zfs"
-      installCRD: true
+      name: "org.democratic-csi.zfs-local-dataset"
+      storageCapacity: true
+      fsGroupPolicy: File
 
     driver:
       config:
@@ -46,8 +51,10 @@ spec:
       - name: zfs
         defaultClass: false
         reclaimPolicy: Delete
-        volumeBindingMode: Immediate
-        allowVolumeExpansion: true
+        volumeBindingMode: WaitForFirstConsumer
+        allowVolumeExpansion: false
+        parameters:
+          fsType: zfs
 
     volumeSnapshotClasses:
       - name: zfs
