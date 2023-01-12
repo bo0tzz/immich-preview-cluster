@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{include "immich-preview.fullnamePrefix" .}}-redis
+  labels:
+    preview.immich.app/instance: {{include "immich-preview.fullnamePrefix" .}}
+    preview.immich.app/component: redis
+spec:
+  ports:
+    - port: 6379
+      targetPort: 6379
+  selector:
+    preview.immich.app/instance: {{include "immich-preview.fullnamePrefix" .}}
+    preview.immich.app/component: redis

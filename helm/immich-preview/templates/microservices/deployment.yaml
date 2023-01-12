@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{include "immich-preview.fullnamePrefix" .}}-microservices
+spec:
+  selector:
+    matchLabels:
+      preview.immich.app/instance: {{include "immich-preview.fullnamePrefix" .}}
+      preview.immich.app/component: microservices
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        preview.immich.app/instance: {{include "immich-preview.fullnamePrefix" .}}
+        preview.immich.app/component: microservices
+    spec:
+      containers:
+        - args:
+            - ./start-microservices.sh
+          command:
+            - /bin/sh
+          envFrom:
+            - configMapRef:
+                name: {{include "immich-preview.fullnamePrefix" .}}-config
+          env:
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: password
+                  name: {{include "immich-preview.fullnamePrefix" .}}-database-app
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  key: username
+                  name: {{include "immich-preview.fullnamePrefix" .}}-database-app
+          image: ghcr.io/immich-app/immich-server:{{ .Values.tag }}
+          imagePullPolicy: Always
+          name: microservices
+          volumeMounts:
+            - mountPath: /usr/src/app/upload
+              name: library
+      volumes:
+        - name: library
+          persistentVolumeClaim:
+            claimName: {{include "immich-preview.fullnamePrefix" .}}-library

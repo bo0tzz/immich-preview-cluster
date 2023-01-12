@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{include "immich-preview.fullnamePrefix" .}}
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: {{include "immich-preview.url" .}}
+    http:
+      paths:
+      - backend:
+          service:
+            name: {{include "immich-preview.fullnamePrefix" .}}-proxy
+            port:
+              number: 8080
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - {{include "immich-preview.url" .}}
+    secretName: {{include "immich-preview.fullnamePrefix" .}}-web-tls

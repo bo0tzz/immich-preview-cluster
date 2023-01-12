@@ -1,0 +1,12 @@
+# tag: 1027
+
+# url: pr-1027.preview.immich.cloud
+
+# loginPageMessage: |-
+#   This is an Immich preview instance.
+#   This message should support newlines.
+
+# fullnamePrefixOverride: immich-demo
+
+# TODO: If suspend is set, scale down all the containers to 0
+# suspend: true

@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{include "immich-preview.fullnamePrefix" .}}-proxy
+spec:
+  selector:
+    matchLabels:
+      preview.immich.app/instance: {{include "immich-preview.fullnamePrefix" .}}
+      preview.immich.app/component: proxy
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        preview.immich.app/instance: {{include "immich-preview.fullnamePrefix" .}}
+        preview.immich.app/component: proxy
+    spec:
+      containers:
+        - envFrom:
+            - configMapRef:
+                name: {{include "immich-preview.fullnamePrefix" .}}-config
+          image: ghcr.io/immich-app/immich-proxy:{{ .Values.tag }}
+          imagePullPolicy: Always
+          name: proxy
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+          
