@@ -28,6 +28,8 @@ spec:
     keepHistory: false
   values:
     controller:
+      driver:
+        logLevel: verbose
       externalResizer:
         enabled: false
 
@@ -37,7 +39,6 @@ spec:
       fsGroupPolicy: File
 
     driver:
-      logLevel: verbose
       config:
         driver: zfs-local-dataset
 
