@@ -37,6 +37,7 @@ spec:
       fsGroupPolicy: File
 
     driver:
+      logLevel: verbose
       config:
         driver: zfs-local-dataset
 
@@ -47,6 +48,10 @@ spec:
           datasetEnableQuotas: true
           datasetEnableReservation: false
 
+    node:
+      driver:
+        logLevel: verbose
+        
     storageClasses:
       - name: zfs
         defaultClass: false
