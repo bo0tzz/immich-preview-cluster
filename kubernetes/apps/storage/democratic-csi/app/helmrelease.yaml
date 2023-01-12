@@ -28,10 +28,27 @@ spec:
     keepHistory: false
   values:
     controller:
-      driver:
-        logLevel: verbose
+      enabled: true
+      strategy: node
+      externalProvisioner:
+        extraArgs:
+        - --leader-election=false
+        - --node-deployment=true
+        - --node-deployment-immediate-binding=false
+        - --feature-gates=Topology=true
+        - --strict-topology=true
+        - --enable-capacity=true
+        - --capacity-ownerref-level=1
+
+      # distributed support is not yet ready
       externalResizer:
         enabled: false
+
+      externalSnapshotter:
+        enabled: true
+        extraArgs:
+        - --leader-election=false
+        - --node-deployment=true
 
     csiDriver:
       name: "org.democratic-csi.zfs-local-dataset"
@@ -48,10 +65,6 @@ spec:
 
           datasetEnableQuotas: true
           datasetEnableReservation: false
-
-    node:
-      driver:
-        logLevel: verbose
         
     storageClasses:
       - name: zfs
