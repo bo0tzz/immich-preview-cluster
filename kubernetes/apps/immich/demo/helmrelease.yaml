@@ -3,6 +3,8 @@ kind: HelmRelease
 metadata:
   name: immich-demo
   namespace: immich
+  labels:
+    preview.immich.app/managed: "true"
 spec:
   interval: 15m
   chart:
