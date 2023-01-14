@@ -12,10 +12,6 @@ spec:
   minSyncReplicas: 0
 
   bootstrap:
-    initdb:
-      database: immich
-  # TODO:
-  # bootstrap:
-  #   recovery:
-  #     backup:
-  #       name: backup-example
+    recovery:
+      backup:
+        name: immich-preview-source
