@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: helm/immich-preview
-      version: '0.1.3'
+      version: '0.1.5'
       sourceRef:
         kind: GitRepository
         name: immich-preview-charts
