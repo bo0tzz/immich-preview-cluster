@@ -3,10 +3,9 @@ apiVersion: v1
 metadata:
   name: {{include "immich-preview.fullnamePrefix" .}}-library
 spec:
-  # TODO: Source from zfs snapshot
-  # storageClassName: zfs
+  storageClassName: zfs
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 2Gi
+      storage: 8Gi
