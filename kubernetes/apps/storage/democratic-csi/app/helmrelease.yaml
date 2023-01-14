@@ -78,3 +78,5 @@ spec:
     volumeSnapshotClasses:
       - name: zfs
         deletionPolicy: Retain
+        secrets:
+          snapshotter-secret:
