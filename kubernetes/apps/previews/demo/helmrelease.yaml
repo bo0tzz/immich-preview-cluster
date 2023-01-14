@@ -2,9 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: immich-demo
-  namespace: immich
-  labels:
-    preview.immich.app/managed: "true"
+  namespace: previews
 spec:
   interval: 15m
   chart:
