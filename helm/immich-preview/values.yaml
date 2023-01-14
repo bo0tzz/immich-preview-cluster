@@ -6,5 +6,11 @@ loginPageMessage: This is an Immich preview instance
 
 # fullnamePrefixOverride: immich-demo
 
-# TODO: If suspend is set, scale down all the containers to 0
-# suspend: true
+server:
+  enabled: true
+microservices:
+  enabled: true
+machineLearning:
+  enabled: true
+web:
+  enabled: true

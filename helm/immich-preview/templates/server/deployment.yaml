@@ -1,9 +1,10 @@
+{{- if .Values.server.enabled }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{include "immich-preview.fullnamePrefix" .}}-server
 spec:
-  replicas: {{include "immich-preview.replicas" .}}
+  replicas: 1
   selector:
     matchLabels:
       preview.immich.app/instance: {{include "immich-preview.fullnamePrefix" .}}
@@ -70,3 +71,4 @@ spec:
         - name: library
           persistentVolumeClaim:
             claimName: {{include "immich-preview.fullnamePrefix" .}}-library
+{{- end}}
