@@ -26,4 +26,10 @@ spec:
       retries: 3
   uninstall:
     keepHistory: false
+  values:
+    args:
+      leaderElection: true
+      httpEndpoint: ":8080"
+      enableDistributedSnapshotting: true
+
     
