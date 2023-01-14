@@ -32,12 +32,12 @@ spec:
               valueFrom:
                 secretKeyRef:
                   key: password
-                  name: {{include "immich-preview.fullnamePrefix" .}}-database-app
+                  name: immich-previews-database-secret
             - name: DB_USERNAME
               valueFrom:
                 secretKeyRef:
                   key: username
-                  name: {{include "immich-preview.fullnamePrefix" .}}-database-app
+                  name: immich-previews-database-secret
           ports:
             - containerPort: 3001
               name: http

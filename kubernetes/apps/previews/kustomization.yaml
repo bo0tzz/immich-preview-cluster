@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - ./namespace.yaml
   - ./demo/helmrelease.yaml
+  - ./database-secret.yaml

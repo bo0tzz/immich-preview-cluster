@@ -29,12 +29,12 @@ spec:
               valueFrom:
                 secretKeyRef:
                   key: password
-                  name: {{include "immich-preview.fullnamePrefix" .}}-database-app
+                  name: immich-previews-database-secret
             - name: DB_USERNAME
               valueFrom:
                 secretKeyRef:
                   key: username
-                  name: {{include "immich-preview.fullnamePrefix" .}}-database-app
+                  name: immich-previews-database-secret
           image: ghcr.io/immich-app/immich-server:{{ .Values.tag }}
           imagePullPolicy: Always
           name: microservices
