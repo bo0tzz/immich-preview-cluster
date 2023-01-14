@@ -21,3 +21,5 @@ spec:
     loginPageMessage: |-
       This is a preview of the Immich release branch.<br>
       Email: <i>demo@immich.app</i><br>Password: <i>demo</i>
+    machineLearning:
+      enabled: true
