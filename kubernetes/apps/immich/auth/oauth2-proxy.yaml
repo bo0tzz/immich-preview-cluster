@@ -18,6 +18,7 @@ spec:
       containers:
       - args:
         - --provider=github
+        - --github-org="immich-app"
         - --email-domain=*
         - --upstream=file:///dev/null
         - --http-address=0.0.0.0:4180
