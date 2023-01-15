@@ -5,10 +5,9 @@ metadata:
   namespace: immich
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
+kind: ClusterRole
 metadata:
   name: preview-controller
-  namespace: immich
 rules:
 - apiGroups:
   - helm.toolkit.fluxcd.io
@@ -17,15 +16,15 @@ rules:
   verbs: ["*"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
+kind: ClusterRoleBinding
 metadata:
   name: preview-controller-binding
-  namespace: immich
 roleRef:
   apiGroup: rbac.authorization.k8s.io
-  kind: Role
+  kind: ClusterRole
   name: preview-controller
 subjects:
 - apiGroup: rbac.authorization.k8s.io
-  kind: User
+  kind: ServiceAccount
   name: preview-controller
+  namespace: immich
