@@ -18,14 +18,13 @@ spec:
       containers:
       - args:
         - --provider=github
-        - --scope="user:email read:user read:org"
         - --email-domain=*
         - --upstream=file:///dev/null
         - --http-address=0.0.0.0:4180
         envFrom:
           - secretRef:
               name: immich-oauth-secret
-        image: quay.io/oauth2-proxy/oauth2-proxy:v7.4.0
+        image: quay.io/oauth2-proxy/oauth2-proxy:v7.2.1
         imagePullPolicy: Always
         name: oauth2-proxy
         ports:
