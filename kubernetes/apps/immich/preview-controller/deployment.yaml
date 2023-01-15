@@ -17,6 +17,7 @@ spec:
       labels:
         app: preview-controller
     spec:
+      serviceAccountName: preview-controller
       containers:
         - name: preview-controller
           image: ghcr.io/bo0tzz/immich-preview-controller:main
