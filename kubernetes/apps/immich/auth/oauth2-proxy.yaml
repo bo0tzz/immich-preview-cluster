@@ -18,7 +18,7 @@ spec:
       containers:
       - args:
         - --provider=github
-        - --scope="user:email read:org"
+        - --scope="user:email read:user read:org"
         - --email-domain=*
         - --upstream=file:///dev/null
         - --http-address=0.0.0.0:4180
