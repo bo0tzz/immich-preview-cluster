@@ -25,7 +25,7 @@ spec:
             - containerPort: 8000
           env:
             - name: PORT
-              value: 8000
+              value: "8000"
             # It's behind auth, this is fine for now, right? .-.
             - name: SECRET_KEY_BASE
               value: aUW4iVEqMO83AwYkBTagg0IZ0GqlPubBaueY3CHml3Yb
