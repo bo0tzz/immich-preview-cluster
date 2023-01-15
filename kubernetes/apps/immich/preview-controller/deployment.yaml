@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: preview-controller
+  namespace: immich
+  labels:
+    app: preview-controller
+spec:
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: preview-controller
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: preview-controller
+    spec:
+      containers:
+        - name: preview-controller
+          image: ghcr.io/bo0tzz/immich-preview-controller:main
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+          env:
+            - name: PORT
+              value: 8000
+            # It's behind auth, this is fine for now, right? .-.
+            - name: SECRET_KEY_BASE
+              value: aUW4iVEqMO83AwYkBTagg0IZ0GqlPubBaueY3CHml3Yb
+          resources:
+            requests:
+              cpu: 20m
+              memory: 200M
