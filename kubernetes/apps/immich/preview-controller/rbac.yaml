@@ -24,7 +24,6 @@ roleRef:
   kind: ClusterRole
   name: preview-controller
 subjects:
-- apiGroup: rbac.authorization.k8s.io
-  kind: ServiceAccount
+- kind: ServiceAccount
   name: preview-controller
   namespace: immich
