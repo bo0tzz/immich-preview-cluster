@@ -5,4 +5,6 @@ resources:
   - ./namespace.yaml
   - ./auth/oauth2-proxy.yaml
   # Just for testing
-  - ./podinfo/*.yaml
+  - ./podinfo/deployment.yaml
+  - ./podinfo/service.yaml
+  - ./podinfo/ingress.yaml
