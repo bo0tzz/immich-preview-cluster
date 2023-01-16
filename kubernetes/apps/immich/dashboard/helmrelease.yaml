@@ -43,6 +43,8 @@ spec:
           sub_filter '<base href="/">' '<base href="/dashboard/">';
           sub_filter_once on;
         nginx.ingress.kubernetes.io/rewrite-target: /$2
+        nginx.ingress.kubernetes.io/configuration-snippet: |
+          rewrite ^(/dashboard)$ $1/dashboard/ permanent;
       paths:
         - /dashboard(/|$)(.*)
       hosts:
