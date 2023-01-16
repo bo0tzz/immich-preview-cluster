@@ -42,7 +42,7 @@ spec:
           proxy_set_header Accept-Encoding "";
           sub_filter '<base href="/">' '<base href="/dashboard/">';
           sub_filter_once on;
-          rewrite ^(/dashboard)$ $1/dashboard/ permanent;
+          rewrite ^(/dashboard)$ /dashboard/ permanent;
         nginx.ingress.kubernetes.io/rewrite-target: /$2
       paths:
         - /dashboard(/|$)(.*)
