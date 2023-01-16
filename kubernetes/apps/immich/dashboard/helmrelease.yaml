@@ -32,12 +32,12 @@ spec:
       - --enable-insecure-login
       - --token-ttl=43200
     pinnedCRDs:
-      - kind: helmreleases
-        name: helm.toolkit.fluxcd.io
+      - kind: customresourcedefinition
+        name: helmreleases.helm.toolkit.fluxcd.io
         displayName: "HelmReleases"
         namespaced: true
-      - kind: clusters
-        name: postgresql.cnpg.io
+      - kind: customresourcedefinition
+        name: clusters.postgresql.cnpg.io
         displayName: "Postgres Clusters"
         namespaced: true
     ingress:
