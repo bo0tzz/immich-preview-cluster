@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: &host "flux-webhook.cluster.immich.app"
+    - host: &host "flux-webhook.cluster.immich.cloud"
       http:
         paths:
           - path: /hook/
