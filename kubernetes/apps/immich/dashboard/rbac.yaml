@@ -32,3 +32,26 @@ subjects:
 - kind: ServiceAccount
   name: kubernetes-dashboard
   namespace: immich
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: dashboard-crds
+rules:
+- apiGroups: ["apiextensions.k8s.io"]
+  resources: ["customresourcedefinitions"]
+  verbs: ["get", "list", "watch"]
+  resourceNames: ["helmreleases.helm.toolkit.fluxcd.io", "clusters.postgresql.cnpg.io"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: dashboard-crd-read
+subjects:
+- kind: ServiceAccount
+  name: kubernetes-dashboard
+  namespace: immich
+roleRef:
+  kind: ClusterRole
+  name: dashboard-crds
+  apiGroup: rbac.authorization.k8s.io
