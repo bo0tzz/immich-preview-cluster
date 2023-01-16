@@ -38,11 +38,12 @@ spec:
         cert-manager.io/cluster-issuer: letsencrypt-production
         nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
         nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
+      paths:
+        - /dashboard
       hosts:
-        - &host dashboard.immich.cloud
+        - &host preview.immich.app
       tls:
-        - secretname: dashboard-tls-web
-          hosts:
+        - hosts:
             - *host
     metricsScraper:
       enabled: true
