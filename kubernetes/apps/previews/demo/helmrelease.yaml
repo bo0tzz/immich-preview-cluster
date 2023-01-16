@@ -16,7 +16,7 @@ spec:
       interval: 1m
   values:
     tag: release
-    url: demo.immich.cloud
+    url: demo.immich.app
     fullnamePrefixOverride: immich-demo
     loginPageMessage: |-
       This is a preview of the Immich release branch.<br>

@@ -59,7 +59,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: preview.immich.cloud
+  - host: preview.immich.app
     http:
       paths:
       - path: /oauth2
@@ -71,5 +71,5 @@ spec:
               number: 4180
   tls:
   - hosts:
-    - preview.immich.cloud
+    - preview.immich.app
     secretName: preview-tls-web

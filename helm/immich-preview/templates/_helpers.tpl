@@ -14,6 +14,6 @@
 {{- if .Values.url }}
 {{- .Values.url }}
 {{- else }}
-{{- printf "%s.preview.immich.cloud" .Release.Name }}
+{{- printf "%s.preview.immich.app" .Release.Name }}
 {{- end}}
 {{- end}}

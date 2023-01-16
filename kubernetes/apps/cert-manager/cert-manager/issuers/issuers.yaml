@@ -5,7 +5,7 @@ metadata:
 spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
-    email: "cluster@immich.cloud"
+    email: "cluster@immich.app"
     privateKeySecretRef:
       name: letsencrypt-production
     solvers:
@@ -20,7 +20,7 @@ metadata:
 spec:
   acme:
     server: https://acme-staging-v02.api.letsencrypt.org/directory
-    email: "cluster@immich.cloud"
+    email: "cluster@immich.app"
     privateKeySecretRef:
       name: letsencrypt-staging
     solvers:
