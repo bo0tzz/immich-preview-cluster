@@ -3,19 +3,19 @@ kind: ClusterRole
 metadata:
   name: dashboard
 rules:
-- apiGroups: ["", "apps/v1", "metrics.k8s.io/v1beta1"]
+- apiGroups: ["", "apps", "metrics.k8s.io"]
   resources: ["*"]
   verbs: ["get", "list", "watch"]
 - apiGroups: ["events.k8s.io/v1"]
   resources: ["events"]
   verbs: ["get", "list", "watch"]
-- apiGroups: ["helm.toolkit.fluxcd.io/v2beta1"]
+- apiGroups: ["helm.toolkit.fluxcd.io"]
   resources: ["helmreleases"]
   verbs: ["get", "list", "watch"]
-- apiGroups: ["networking.k8s.io/v1"]
+- apiGroups: ["networking.k8s.io"]
   resources: ["ingresses"]
   verbs: ["get", "list", "watch"]
-- apiGroups: ["postgresql.cnpg.io/v1"]
+- apiGroups: ["postgresql.cnpg.io"]
   resources: ["clusters"]
   verbs: ["get", "list", "watch"]
 ---
