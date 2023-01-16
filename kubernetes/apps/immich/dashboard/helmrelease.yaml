@@ -49,7 +49,8 @@ spec:
       hosts:
         - &host preview.immich.app
       tls:
-        - hosts:
+        - secretName: preview-tls-web
+          hosts:
             - *host
     metricsScraper:
       enabled: true
