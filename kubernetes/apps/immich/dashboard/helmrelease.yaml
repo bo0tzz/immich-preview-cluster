@@ -31,6 +31,15 @@ spec:
       - --disable-settings-authorizer
       - --enable-insecure-login
       - --token-ttl=43200
+    pinnedCRDs:
+      - kind: helmreleases
+        name: helm.toolkit.fluxcd.io
+        displayName: "HelmReleases"
+        namespaced: true
+      - kind: clusters
+        name: postgresql.cnpg.io
+        displayName: "Postgres Clusters"
+        namespaced: true
     ingress:
       enabled: true # temp
       className: nginx
