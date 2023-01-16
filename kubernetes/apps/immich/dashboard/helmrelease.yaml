@@ -38,8 +38,13 @@ spec:
         cert-manager.io/cluster-issuer: letsencrypt-production
         nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
         nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
+        nginx.ingress.kubernetes.io/configuration-snippet: |
+          proxy_set_header Accept-Encoding "";
+          sub_filter '<base href="/">' '<base href="/dashboard/">';
+          sub_filter_once on;
+        nginx.ingress.kubernetes.io/rewrite-target: /$2
       paths:
-        - /dashboard
+        - /dashboard(/|$)(.*)
       hosts:
         - &host preview.immich.app
       tls:
