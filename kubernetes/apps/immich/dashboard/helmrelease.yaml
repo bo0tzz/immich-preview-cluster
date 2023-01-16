@@ -32,7 +32,7 @@ spec:
       - --enable-insecure-login
       - --token-ttl=43200
     ingress:
-      enabled: false # temp
+      enabled: true # temp
       className: nginx
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-production
