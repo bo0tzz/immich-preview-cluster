@@ -69,7 +69,18 @@ spec:
             name: oauth2-proxy
             port:
               number: 4180
+  - host: dashboard.immich.cloud
+    http:
+      paths:
+      - path: /oauth2
+        pathType: Prefix
+        backend:
+          service:
+            name: oauth2-proxy
+            port:
+              number: 4180
   tls:
   - hosts:
     - preview.immich.app
-    secretName: preview-tls-web
+    - dashboard.immich.cloud
+    secretName: auth-tls-web
