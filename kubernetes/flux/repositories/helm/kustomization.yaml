@@ -8,4 +8,4 @@ resources:
   - ./cnpg.yaml
   - ./democratic-csi.yaml
   - ./piraeus.yaml
-  
+  - ./kubernetes-dashboard.yaml

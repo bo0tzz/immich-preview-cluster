@@ -7,3 +7,4 @@ resources:
   - ./preview-controller/deployment.yaml
   - ./preview-controller/service.yaml
   - ./preview-controller/rbac.yaml
+  - ./dashboard/helmrelease.yaml
