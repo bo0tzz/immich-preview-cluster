@@ -16,6 +16,7 @@ spec:
       labels:
         preview.immich.app/instance: {{include "immich-preview.fullnamePrefix" .}}
         preview.immich.app/component: server
+        podbump.bo0tzz.me/enabled: "true"
     spec:
       containers:
         - name: server
