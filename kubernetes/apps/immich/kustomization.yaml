@@ -9,3 +9,5 @@ resources:
   - ./preview-controller/rbac.yaml
   - ./dashboard/helmrelease.yaml
   - ./dashboard/rbac.yaml
+  - ./podbump/deployment.yaml
+  - ./podbump/rbac.yaml
