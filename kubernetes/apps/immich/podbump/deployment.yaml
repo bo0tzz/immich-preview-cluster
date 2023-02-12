@@ -11,7 +11,7 @@ spec:
   selector:
     matchLabels:
       app: podbump
-  replicas: 0
+  replicas: 1
   template:
     metadata:
       labels:
