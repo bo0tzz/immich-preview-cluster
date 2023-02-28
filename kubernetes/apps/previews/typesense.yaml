@@ -18,3 +18,5 @@ spec:
     envFrom:
       - configMapRef:
           name: typesense-config
+    image:
+      tag: 0.24.0
