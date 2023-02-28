@@ -5,3 +5,5 @@ resources:
   - ./namespace.yaml
   - ./demo/helmrelease.yaml
   - ./database-secret.yaml
+  - ./typesense-config.yaml
+  - ./typesense.yaml

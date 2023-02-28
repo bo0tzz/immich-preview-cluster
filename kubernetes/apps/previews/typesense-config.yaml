@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: typesense-config
+  namespace: previews
+data:
+  TYPESENSE_API_KEY: thisisanapikey
