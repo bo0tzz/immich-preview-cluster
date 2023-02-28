@@ -5,3 +5,5 @@ metadata:
   namespace: previews
 data:
   TYPESENSE_API_KEY: thisisanapikey
+  TYPESENSE_HOST: typesense-server
+  TYPESENSE_PORT: "80"
