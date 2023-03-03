@@ -17,3 +17,5 @@ data:
   IMMICH_MACHINE_LEARNING_URL: http://{{include "immich-preview.fullnamePrefix" .}}-machine-learning:3003
   TYPESENSE_API_KEY: {{ randAlphaNum 48 | quote }}
   TYPESENSE_HOST: {{include "immich-preview.fullnamePrefix" .}}-typesense
+  # Lazy: The below should probably just be spec'd on the deployment instead
+  TYPESENSE_DATA_DIR: /data
