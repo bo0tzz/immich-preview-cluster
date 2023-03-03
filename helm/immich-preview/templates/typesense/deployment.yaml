@@ -16,6 +16,9 @@ spec:
         preview.immich.app/instance: {{include "immich-preview.fullnamePrefix" .}}
         preview.immich.app/component: typesense
     spec:
+      volumes:
+        - name: data
+          emptyDir: {}
       containers:
         - name: typesense
           envFrom:
@@ -23,6 +26,9 @@ spec:
                 name: {{include "immich-preview.fullnamePrefix" .}}-config
           image: docker.io/typesense/typesense:0.24.0
           imagePullPolicy: Always
+          volumeMounts:
+            - name: data
+              mountPath: /data
           ports:
             - name: http
               containerPort: 8108
