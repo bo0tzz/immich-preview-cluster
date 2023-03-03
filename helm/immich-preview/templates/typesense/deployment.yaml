@@ -1,0 +1,43 @@
+{{- if .Values.machineLearning.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{include "immich-preview.fullnamePrefix" .}}-typesense
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      preview.immich.app/instance: {{include "immich-preview.fullnamePrefix" .}}
+      preview.immich.app/component: typesense
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        preview.immich.app/instance: {{include "immich-preview.fullnamePrefix" .}}
+        preview.immich.app/component: typesense
+    spec:
+      containers:
+        - envFrom:
+            - configMapRef:
+                name: {{include "immich-preview.fullnamePrefix" .}}-config
+          image: docker.io/typesense/typesense:0.24.0
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8108
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 60
+            timeoutSeconds: 5
+            failureThreshold: 6
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 10
+            timeoutSeconds: 3
+            periodSeconds: 5
+{{- end}}

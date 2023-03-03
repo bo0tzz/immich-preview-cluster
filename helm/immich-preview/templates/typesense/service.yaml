@@ -1,0 +1,15 @@
+{{- if .Values.machineLearning.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{include "immich-preview.fullnamePrefix" .}}-typesense
+spec:
+  ports:
+  - name: http
+    port: 8108
+    protocol: TCP
+    targetPort: http
+  selector:
+    preview.immich.app/instance: {{include "immich-preview.fullnamePrefix" .}}
+    preview.immich.app/component: typesense
+{{- end}}

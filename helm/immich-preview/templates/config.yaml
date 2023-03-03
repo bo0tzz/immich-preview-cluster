@@ -15,3 +15,5 @@ data:
   IMMICH_SERVER_URL: http://{{include "immich-preview.fullnamePrefix" .}}-server:3001
   PUBLIC_IMMICH_SERVER_URL: http://{{include "immich-preview.fullnamePrefix" .}}-server:3001
   IMMICH_MACHINE_LEARNING_URL: http://{{include "immich-preview.fullnamePrefix" .}}-machine-learning:3003
+  TYPESENSE_API_KEY: {{ randAlphaNum 48 | quote }}
+  TYPESENSE_HOST: {{include "immich-preview.fullnamePrefix" .}}-typesense
