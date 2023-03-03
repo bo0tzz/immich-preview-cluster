@@ -17,7 +17,8 @@ spec:
         preview.immich.app/component: typesense
     spec:
       containers:
-        - envFrom:
+        - name: typesense
+          envFrom:
             - configMapRef:
                 name: {{include "immich-preview.fullnamePrefix" .}}-config
           image: docker.io/typesense/typesense:0.24.0
