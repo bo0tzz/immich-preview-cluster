@@ -19,11 +19,7 @@ spec:
         podbump.bo0tzz.me/enabled: "true"
     spec:
       containers:
-        - args:
-            - ./entrypoint.sh
-          command:
-            - /bin/sh
-          envFrom:
+        - envFrom:
             - configMapRef:
                 name: {{include "immich-preview.fullnamePrefix" .}}-config
           image: ghcr.io/immich-app/immich-web:{{ .Values.tag }}
