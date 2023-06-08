@@ -23,9 +23,8 @@ spec:
           image: ghcr.io/immich-app/immich-server:{{ .Values.tag }}
           imagePullPolicy: Always
           args:
-            - ./start-server.sh
-          command:
-            - /bin/sh
+            - start.sh
+            - immich
           envFrom:
             - configMapRef:
                 name: {{include "immich-preview.fullnamePrefix" .}}-config

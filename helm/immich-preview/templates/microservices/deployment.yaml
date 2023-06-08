@@ -20,9 +20,8 @@ spec:
     spec:
       containers:
         - args:
-            - ./start-microservices.sh
-          command:
-            - /bin/sh
+            - start.sh
+            - microservices
           envFrom:
             - configMapRef:
                 name: {{include "immich-preview.fullnamePrefix" .}}-config
