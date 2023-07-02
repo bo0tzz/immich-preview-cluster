@@ -11,6 +11,6 @@ server:
 microservices:
   enabled: true
 machineLearning:
-  enabled: false
+  enabled: true
 web:
   enabled: true
