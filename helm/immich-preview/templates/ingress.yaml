@@ -13,12 +13,12 @@ spec:
       paths:
       - backend:
           service:
-            name: {{include "immich-preview.fullnamePrefix" .}}-proxy
+            name: {{include "immich-preview.fullnamePrefix" .}}-server
             port:
-              number: 8080
+              number: 3001
         path: /
         pathType: Prefix
   tls:
   - hosts:
     - {{include "immich-preview.url" .}}
-    secretName: {{include "immich-preview.fullnamePrefix" .}}-web-tls
+    secretName: {{include "immich-preview.fullnamePrefix" .}}-tls

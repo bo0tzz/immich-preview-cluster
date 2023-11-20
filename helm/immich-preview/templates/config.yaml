@@ -6,14 +6,10 @@ data:
   DB_DATABASE_NAME: immich
   DB_HOSTNAME: {{include "immich-preview.fullnamePrefix" .}}-database-rw
   DISABLE_REVERSE_GEOCODING: "true"
-  JWT_SECRET: {{ randAlphaNum 48 | quote }}
   NODE_ENV: production
   REDIS_HOSTNAME: {{include "immich-preview.fullnamePrefix" .}}-redis
   PUBLIC_LOGIN_PAGE_MESSAGE: |-
 {{ .Values.loginPageMessage | indent 4 }}
-  IMMICH_WEB_URL: http://{{include "immich-preview.fullnamePrefix" .}}-web:3000
-  IMMICH_SERVER_URL: http://{{include "immich-preview.fullnamePrefix" .}}-server:3001
-  PUBLIC_IMMICH_SERVER_URL: http://{{include "immich-preview.fullnamePrefix" .}}-server:3001
   IMMICH_MACHINE_LEARNING_URL: http://{{include "immich-preview.fullnamePrefix" .}}-machine-learning:3003
   TYPESENSE_API_KEY: {{ randAlphaNum 48 | quote }}
   TYPESENSE_HOST: {{include "immich-preview.fullnamePrefix" .}}-typesense
