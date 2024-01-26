@@ -11,4 +11,3 @@ resources:
   - ./dashboard/rbac.yaml
   - ./podbump/deployment.yaml
   - ./podbump/rbac.yaml
-  - ./discord-bot/deployment.yaml
