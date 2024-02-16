@@ -20,3 +20,5 @@ spec:
     recovery:
       backup:
         name: immich-preview-source
+      recoveryTarget:
+        targetImmediate: true
