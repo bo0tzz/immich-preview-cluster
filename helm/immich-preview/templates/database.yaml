@@ -21,4 +21,5 @@ spec:
       backup:
         name: immich-preview-source
       recoveryTarget:
+        backupID: "20231207T182456"
         targetImmediate: true
