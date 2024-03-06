@@ -2,8 +2,6 @@
 
 # url: pr-1027.preview.immich.app
 
-loginPageMessage: This is an Immich preview instance
-
 # fullnamePrefixOverride: immich-demo
 
 server:

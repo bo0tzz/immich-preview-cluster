@@ -5,7 +5,7 @@ metadata:
 spec:
   storageClassName: zfs
   dataSource:
-    name: immich-preview-library-base
+    name: immich-preview-library
     kind: VolumeSnapshot
     apiGroup: snapshot.storage.k8s.io
   accessModes:
